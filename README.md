@@ -1,111 +1,152 @@
-# AIM --- Advaita Inquiry Matrix
+# AIM — Advaita Inquiry Matrix
 
-The **Advaita Inquiry Matrix (AIM)** is a structured research and
-teaching system designed to model the pedagogical logic of the Advaita
-Vedānta tradition.
+## Project Overview
 
-Instead of functioning as a general-purpose chatbot, AIM is intended to
-act as an **Advaita teaching engine** capable of:
+The **Advaita Inquiry Matrix (AIM)** is a structured knowledge system designed to model and reproduce the pedagogical logic of the Advaita Vedānta teaching tradition.
 
--   diagnosing conceptual misunderstanding
--   selecting appropriate teaching methods (*prakriyā*)
--   routing to relevant scriptural passages
--   guiding structured philosophical inquiry
+Rather than acting as a general-purpose chatbot, AIM is intended to function as a **pedagogical engine** that can diagnose misunderstanding, select appropriate teaching methods (*prakriyā-s*), and guide a student through the classical Advaita inquiry process.
 
-The project treats the **teaching tradition itself as the teacher**,
-using structured representations of Upaniṣadic pedagogy.
+The architecture separates **scriptural sources**, **pedagogical knowledge**, and **system logic** so that the teaching tradition itself becomes the primary teacher.
 
-------------------------------------------------------------------------
+## Project Status
 
-# Quick Navigation
+Basic development is complete. The project is currently in the **tuning stage** — verifying correct functionality according to Advaita scriptural pedagogy.
 
-    AIM/
-    ├── PROJECT_OVERVIEW.md
-    ├── archive/
-    ├── corpus/
-    ├── pedagogy/
-    ├── system/
-    ├── teaching_engine/
-    └── tools/
+---
 
-### archive
+## Top-Level Architecture
 
-Deprecated or historical project materials.
+```
+AIM/
+├── archive/
+├── corpus/
+├── pedagogy/
+├── system/
+├── teaching_engine/
+└── tools/
+```
 
-### corpus
+Each directory serves a distinct purpose in the overall system.
 
-Primary textual sources: - Upaniṣads - prakaraṇa texts - commentaries
+---
 
-### pedagogy
+## archive/
 
-Extracted teaching knowledge from Advaita texts.
+Contains deprecated specifications, experimental materials, or historical project artifacts that are no longer active components of the system. Examples include early specifications, retired design documents, and branding assets.
 
-Contains: - Advaita pedagogical framework - corpus concept indexes -
-pedagogical maps of individual texts
+Nothing inside `archive/` should be referenced by the runtime system.
 
-### system
+---
 
-Core system architecture including: - schemas - state machines -
-ingestion rules - dialogue protocols
+## corpus/
 
-### teaching_engine
+The **primary textual knowledge base** of the project. This folder contains source texts used by the AIM engine, organized by genre.
 
-Runtime logic for selecting teaching methods and routing scriptural
-references.
+```
+corpus/
+├── upanishads/
+├── prakaranas/
+└── commentaries/
+```
 
-### tools
+Included materials:
 
-Developer utilities used for ingestion and maintenance.
+- Upaniṣads
+- Prakaraṇa texts (Ātma-bodha, Upadeśa-sāhasrī)
+- Traditional commentaries
 
-------------------------------------------------------------------------
+Files in this directory contain **only textual material and structured tags** — never system logic.
 
-# Conceptual Architecture
+---
 
-The AIM system mirrors the classical Advaita teaching process:
+## pedagogy/
 
-  Traditional Teaching   AIM Component
----------------------- --------------------
-  Śruti                  corpus
-  Prakriyā               pedagogy
-  Guru reasoning         teaching_engine
-  Student cognition      state_machine
-  Dialogue               dialogue_protocols
+This layer extracts and organizes the **teaching structure** present in Advaita scripture.
 
-This separation allows AIM to approximate the **guru--śiṣya pedagogical
-method** using structured knowledge.
+```
+pedagogy/
+├── advaita_framework/
+├── corpus_index/
+└── text_maps/
+```
 
-------------------------------------------------------------------------
+### advaita_framework/
 
-# Current Corpus
+Defines the general principles of Advaita pedagogy, including teaching methods (*prakriyā-s*), student cognition models, error patterns, recognition processes, and dialogue protocols. This folder describes **how Advaita teaching works**.
 
-The project currently includes structured versions of:
+### corpus_index/
 
-**Upaniṣads** - Aitareya - Chāndogya (selected sections) - Īśa - Kaṭha -
-Māṇḍūkya - Muṇḍaka - Taittirīya
+Cross-text indexes linking philosophical concepts to specific textual passages — pedagogical coverage maps, cross-Upaniṣadic teaching patterns, and concept indexes.
 
-**Prakaraṇa texts** - Ātma‑bodha - Upadeśa‑sāhasrī
+### text_maps/
 
-Additional texts may be added as the corpus expands.
+Pedagogical analyses of individual texts or sections of texts, such as the Kaṭha Upaniṣad teaching graph, Chāndogya 6 teaching loop, and Taittirīya pedagogical map. These maps describe **how a specific scripture conducts the teaching process**.
 
-------------------------------------------------------------------------
+---
 
-# Project Goals
+## system/
 
-1.  Model Advaita pedagogy as a structured system.
-2.  Map scriptural teaching sequences into machine-readable form.
-3.  Diagnose student misconceptions using cognitive models.
-4.  Route inquiry through appropriate teaching methods.
+Defines the **internal architecture of AIM**.
 
-Ultimately AIM aims to function as a **digital inquiry environment for
-Advaita Vedānta study and teaching**.
+```
+system/
+├── architecture/
+├── schemas/
+├── state_machine/
+├── dialogue_protocols/
+└── ingestion/
+```
 
-------------------------------------------------------------------------
+This layer defines data schemas, system specifications, ingestion rules, cognitive state models, and dialogue protocols. The files here function as the **operating system of AIM**.
 
-# Related Documents
+---
 
-For full architectural details see:
+## teaching_engine/
 
-    PROJECT_OVERVIEW.md
+Contains runtime teaching logic used to guide inquiry, including the prakriyā selection engine, dialogue strategy modules, and scripture routing logic.
 
-That document explains the design principles and system structure in
-detail.
+The decision process follows this flow:
+
+```
+student input
+→ error detection
+→ student state
+→ prakriyā selection
+→ scripture reference
+→ dialogue generation
+```
+
+---
+
+## tools/
+
+Developer utilities used to maintain and expand the system — ingestion templates, validation scripts, and corpus analysis tools. These assist development but are **not part of the runtime teaching engine**.
+
+---
+
+## Conceptual Model
+
+The AIM architecture mirrors the traditional Advaita teaching structure:
+
+| Traditional System | AIM Layer          |
+|--------------------|--------------------|
+| Śruti              | corpus             |
+| Prakriyā           | pedagogy           |
+| Guru reasoning     | teaching_engine    |
+| Śiṣya cognition    | state_machine      |
+| Teaching dialogue  | dialogue_protocols |
+
+This separation allows the system to reproduce the **guru–śiṣya pedagogical process** in a structured way.
+
+---
+
+## Project Goal
+
+The long-term aim of the project is to construct a system capable of:
+
+1. Diagnosing conceptual error
+2. Selecting the appropriate Advaita teaching method
+3. Routing to relevant scriptural passages
+4. Conducting structured philosophical dialogue
+
+The ultimate objective is to model the **Advaita teaching tradition as an adaptive inquiry system**.
