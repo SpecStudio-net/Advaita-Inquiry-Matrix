@@ -13,6 +13,7 @@ Output only the JSON object — no preamble, no explanation, no markdown fences.
 - `prana-adhyasa` — identification with vital energy or breath
 - `manas-adhyasa` — identification with mind or emotions
 - `vijnana-adhyasa` — identification with the intellect or understander
+- `ananda-adhyasa` — identification with the bliss sheath or deep-sleep state (root/causal-body error: "that absorbed bliss *is* the Self"; "in deep sleep I was closest to Brahman")
 - `saksi-adhyasa` — subtle identification with the witness
 - `visaya-adhyasa-moksa` — treating liberation as a future attainment
 

@@ -50,8 +50,11 @@ def _handle_session_open(event: dict) -> dict:
     if stage == "purva-adhikari":
         return _redirect_directive(record, event)
 
-    # Stage 1+: probe highest-priority active error
-    active = [e for e in record.get("active_errors", []) if e["status"] in ("active", "weakening")]
+    # Stage 1+: probe highest-priority active error.
+    # Include "possibly_resolved" errors so the opening probe either confirms
+    # resolution (and we can remove them) or reactivates them — they should
+    # never sit unconfirmed across multiple sessions.
+    active = [e for e in record.get("active_errors", []) if e["status"] in ("active", "weakening", "possibly_resolved")]
     if active:
         target = active[0]
         prakriya_info = prakriya_selector.select(target["error_type"], stage)

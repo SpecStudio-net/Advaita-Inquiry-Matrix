@@ -1,10 +1,12 @@
 import os
 import importlib
 import logging
+from pathlib import Path
 
 logging.basicConfig(level=logging.INFO)
 
-CORPUS_ROOT = "corpus"
+_REPO_ROOT = Path(__file__).resolve().parent
+CORPUS_ROOT = str(_REPO_ROOT / "corpus")
 
 
 # Canonical text names for corpus_database.json metadata
@@ -150,7 +152,9 @@ def load_corpus():
     return results
 
 
-def save_corpus(data, output_path="corpus_database.json"):
+def save_corpus(data, output_path=None):
+    if output_path is None:
+        output_path = str(_REPO_ROOT / "corpus_database.json")
     import json
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)

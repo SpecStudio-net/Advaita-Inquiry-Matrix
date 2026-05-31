@@ -1,3 +1,4 @@
+import logging
 import re
 import json
 
@@ -122,4 +123,4 @@ if __name__ == "__main__":
     result = parser.to_json()
     with open("Isha.json", "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
-    print(f"Parsed {result['unit_count']} units successfully.")
+    logging.info(f"Parsed {result['unit_count']} units successfully.")

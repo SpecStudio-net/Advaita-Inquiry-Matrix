@@ -16,6 +16,7 @@ the JSON object — no preamble, no explanation, no markdown fences.
 | `prana-adhyasa` | identifies Self with vital energy or breath | "I feel drained / depleted"; energy or vitality treated as constitutive of self; "I am alive because of my breath" |
 | `manas-adhyasa` | identifies Self with mind or emotions | "I am anxious / angry / my thoughts"; mind-states treated as self-states; "my mind won't stop — that's my problem" |
 | `vijnana-adhyasa` | identifies Self with the intellect or understander | "I understand this now"; "the one who is inquiring"; the knower is treated as a separate entity that can acquire or lose knowledge |
+| `ananda-adhyasa` | identifies Self with the bliss sheath or deep-sleep state (root/causal-body error) | "in deep sleep I was most myself"; "that bliss in meditation *is* the Self"; "I want to stay in that absorbed state"; liberation equated with permanent bliss; samādhi treated as home |
 | `saksi-adhyasa` | subtle identification with the witness | "I am the witness"; "I am awareness" as a claim about a witnessing subject — the witness is held as an object |
 | `visaya-adhyasa-moksa` | treats liberation as a future attainment | "when I am enlightened"; "am I progressing?"; "I want to achieve moksha"; liberation conceived as a state to be reached |
 
