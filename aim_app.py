@@ -33,7 +33,7 @@ st.title("AIM — Advaita Inquiry Matrix")
 
 # ---------- Session state defaults ----------
 
-STUDENT_ID = getpass.getuser()
+STUDENT_ID = getpass.getuser()  # single-user assumption: system login name = student id
 
 for key, default in {
     "active":      False,

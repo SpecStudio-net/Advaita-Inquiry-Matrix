@@ -1204,3 +1204,100 @@ was correcting was never there. The teaching dissolves utterly.
 - The pointing has fulfilled its function and been released
 - What remains is unmediated recognition — or genuine, undefended
   openness to it
+
+---
+
+### B.12 Ānandamaya-Negation
+
+**ID:** anandamaya-negation  
+**Stages:** nididhyāsana only  
+**Error addressed:** ananda-adhyasa — identification with the bliss sheath
+(*ānandamaya-kośa*, the causal body, *kāraṇa-śarīra*)
+
+**Note:** This is the subtlest kośa-level correction. The *ānandamaya-kośa* is the
+deepest sheath — identified with in deep sleep ("I slept happily, I knew nothing")
+and in *samādhi* experiences of absorbed bliss. Śaṅkara's ruling (*ānandamayo'bhyāsāt*,
+Brahma Sūtra 1.1.12): *ānandamaya* is a kośa rooted in *avidyā*, not Brahman itself.
+The bliss experienced is real at the *vyāvahārika* level — the error is identifying
+*with* it rather than recognizing oneself as the witness *in whom* it appears.
+
+**CRITICAL AVOIDANCE:** Do NOT frame liberation as the attainment or permanence of
+bliss (*bliss-as-goal-framing*). Do NOT stabilize the witness-as-experiencer-of-bliss.
+The causal-bliss "I" must dissolve into Brahman-identity, not be refined as a
+subtle object. This module approaches the *mūlāvidyā* boundary — the root ignorance
+that is beginningless (*anādi*). The correction does not produce a state; it removes
+a misidentification.
+
+**1. Push Condition**
+
+Activated when:
+- Student identifies with experienced bliss: "I had a blissful meditation — *that*
+  is the Self" or "in deep sleep I was closest to Brahman"
+- Student treats *samādhi* experiences as the goal or as glimpses of their ultimate
+  identity
+- Student believes liberation means permanent access to bliss-states
+- Student resists inquiry by resting in pleasurable absorbed states
+
+**2. Internal Stages**
+
+1. **Acknowledge the bliss** — do not deny the experience. "That bliss is real.
+   The question is: who is experiencing it? Is the experiencer itself the bliss?"
+2. **Apply three-state analysis** — in deep sleep, the gross body and the mind are
+   absent; the experienced bliss (*prājña*) still appears and disappears. What
+   appears and disappears is witnessed. The witness of the bliss is not the bliss.
+3. **Kośa discrimination at the causal layer** — "you are aware that there was
+   bliss. Even this bliss is an object of your awareness. You are not the bliss —
+   you are that *to which* the bliss appeared."
+4. **Neti-neti at the subtle level** — the bliss-sheath is *annamaya* of the subtle
+   domain: it still has a form, however subtle. What you are is without form.
+5. **Point toward the witness of the witness** — do not land on the witness as a
+   new stable position. The witness of the causal bliss is itself to be
+   investigated: "who is aware even of this?"
+6. **Dissolve into Brahman-identity** — the final movement is from "I am the witness
+   of bliss" toward "I am that which requires no witness — Brahman, self-luminous."
+
+**3. Micro-Variation Strategies**
+
+- Deep-sleep analysis (Māṇḍūkya 3–5): in *suṣupti* all objects have withdrawn,
+  and yet the waking mind remembers: "I slept happily, I knew nothing." Who
+  witnessed the absence? The *prājña* appears to the witness — it is not the witness.
+- Taittirīya 2.5: "*ānanda* is the self, Brahman is the tail, the support." The
+  *ānandamaya* points toward Brahman as its ground — but is not Brahman itself.
+  Brahman is the *support* of the bliss-sheath, not the sheath.
+- The mirror analogy: the mirror reflects light brilliantly, but the mirror is
+  not the light. *Ānandamaya* reflects the *ānanda* of Brahman (*saccidānanda*)
+  but is not Brahman.
+
+**4. Loop Detection Patterns**
+
+- Student returns repeatedly to meditative bliss experiences as "proof" of progress
+- Student accepts the correction intellectually but continues to place bliss-states
+  at the center of their practice
+- Student experiences the negation as deprivation — grief at being told bliss is
+  "not it"
+- Student replaces bliss-identification with a subtle seeker-identity ("I am the
+  one seeking the Self beyond bliss") — route to seeker-dissolution if this occurs
+
+**5. Escalation Criteria**
+
+If the causal-bliss identification persists through sustained three-state analysis
+and kośa discrimination, escalate to *sākṣi-adhyāsa* treatment: the student may
+have moved from identifying with the bliss to identifying with the experiencer of
+bliss (a refined form of witness-reification). If the student refuses investigation
+by retreating into absorbed states, address the refusal directly before resuming
+the inquiry.
+
+**6. Completion Test**
+
+- Student can recognize that bliss arises *in* awareness rather than *as* awareness
+- Student does not locate themselves as the experiencer of bliss
+- Student can abide without reaching for bliss-states as validation
+- The three-state analysis (especially the deep-sleep analysis) is genuinely
+  assimilated — not just intellectually agreed to
+
+**7. Relation to mūlāvidyā**
+
+The *ānandamaya-kośa* is the seed-sheath — the subtlest form of ignorance. Its
+dissolution does not produce liberation; it removes the last formal obstruction.
+What was always the case — *nitya-mukta*, eternally free — is recognized, not
+produced. Do not frame the completion of this prakriyā as an achievement.

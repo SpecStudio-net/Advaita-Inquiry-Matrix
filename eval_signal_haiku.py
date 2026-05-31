@@ -19,7 +19,7 @@ load_dotenv(override=True)
 
 from llm_session import _prompt, _parse_json, _validate_signal
 
-OPUS = "claude-opus-4-7"
+OPUS = "claude-opus-4-8"
 HAIKU = "claude-haiku-4-5"
 LOGS_DIR = Path("logs/sessions")
 OUT_PATH = Path("logs/eval_signal_haiku.jsonl")

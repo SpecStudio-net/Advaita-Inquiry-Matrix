@@ -27,10 +27,11 @@ MODEL = os.environ.get("AIM_MODEL", "claude-opus-4-8")
 MAX_API_RETRIES = 3
 BACKOFF_BASE = 1.0
 
-PROMPT_DIR = Path("prompts")
-PRAKRIYA_MODULES_PATH = Path("system/state_machine/AIM_prakriya_modules.md")
-LOGS_DIR = Path("logs/sessions")
-CKPT_DIR = Path("logs/checkpoints")
+_REPO_ROOT = Path(__file__).resolve().parent
+PROMPT_DIR = Path(os.environ.get("AIM_PROMPT_DIR", str(_REPO_ROOT / "prompts")))
+PRAKRIYA_MODULES_PATH = _REPO_ROOT / "system" / "state_machine" / "AIM_prakriya_modules.md"
+LOGS_DIR = Path(os.environ.get("AIM_LOGS_DIR", str(_REPO_ROOT / "logs" / "sessions")))
+CKPT_DIR = Path(os.environ.get("AIM_CKPT_DIR", str(_REPO_ROOT / "logs" / "checkpoints")))
 
 
 # ---------- Prompt loading (loaded once, cached) ----------
@@ -68,7 +69,7 @@ def _prakriya_module_text(prakriya_name: str) -> str:
 
     section = []
     for i, line in enumerate(lines[start:], start):
-        if i > start and line.startswith("## "):
+        if i > start and line.startswith("### "):  # modules delimited by ### not ##
             break
         section.append(line)
     return "\n".join(section)

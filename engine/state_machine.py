@@ -421,7 +421,6 @@ def _is_recurring(error_type: str, record: dict) -> bool:
 
 def _is_regression(error_type: str, stage: str, record: dict) -> bool:
     """True if this error belongs to an earlier stage than current."""
-    stage_order = ["adhikari", "sravana", "manana", "nididhyasana", "jnana-nistha"]
     gross_errors = {"deha-adhyasa", "prana-adhyasa"}
     if error_type in gross_errors and stage in ("nididhyasana", "jnana-nistha"):
         return True
