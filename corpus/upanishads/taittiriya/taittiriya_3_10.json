@@ -2,7 +2,7 @@
   "metadata": {
     "cluster": "realization_expression",
     "prakriyā": "post_realization_integration",
-    "pedagogical_role": "integrate_kosha_model_after_realization"
+    "pedagogical_role": "integrate_kosha_model_after_realization",
     "adhikāra_level": "madhyama",
     "cognitive_mode": "contemplative",
     "pedagogical_stage": "realization_stabilization"
@@ -81,7 +81,11 @@
         "cognitive_mode": "contemplative",
         "pedagogical_stage": "realization_stabilization"
       },
-      "status": "VERIFIED"
+      "status": "VERIFIED",
+      "prakriya": "pancakosa-viveka",
+      "pedagogical_stage": "nididhyasana",
+      "adhikara_level": "uttama",
+      "ontological_scope": "paramarathika"
     },
     {
       "id": "TAITTIRIYA_3_10_6",

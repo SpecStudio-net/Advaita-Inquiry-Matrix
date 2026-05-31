@@ -15078,10 +15078,10 @@
         "transliteration": "asanneva sa bhavati | asadbrahmeti veda cet | asti brahmeti cedveda | santamenaṃ tato viduriti | tasyaiṣa eva śārīra ātmā | yaḥ pūrvasya | athāto'nupraśnāḥ | utāvidvānamuṃ lokaṃ pretya | kaścana gacchatī |",
         "translation": "If he knows Brahman as non-existent, he becomes himself non-existent. If he knows Brahman as existent, then (they) the world knows him to be existent. Of the former (Anandamaya kosha), the Self is the essence. Thereupon arise the following questions: Does the ignorant, leaving this world, go There? Or, does the knower, leaving this world, obtain That?",
         "cluster": "brahman_definition",
-        "ontological_scope": "pāramārthika",
+        "ontological_scope": "paramarathika",
         "pedagogical_role": "clarify_existence_of_brahman",
         "cognitive_mode": "analytic_contemplative",
-        "pedagogical_stage": "nididhyāsana",
+        "pedagogical_stage": "nididhyasana",
         "status": "VERIFIED",
         "prakriya": "ontological_definition",
         "adhikara_level": "madhyama"
@@ -15095,7 +15095,7 @@
         "ontological_scope": "dual-register",
         "pedagogical_role": "describe_creation_and_immanence",
         "cognitive_mode": "contemplative",
-        "pedagogical_stage": "nididhyāsana",
+        "pedagogical_stage": "nididhyasana",
         "status": "VERIFIED",
         "prakriya": "cosmological_explanation",
         "adhikara_level": "madhyama"
@@ -15160,10 +15160,10 @@
         "transliteration": "asadvā idamagra āsīt | tato vai sadajāyata | tadātmāna svayamakuruta | tasmāttatsukṛtamucyata iti | yadvai tat sukṛtam | raso vai saḥ | rasagͫhyevāyaṃ labdhvā''nandī bhavati | ko hyevānyātkaḥ prāṇyāt | yadeṣa ākāśa ānando na syāt | eṣa hyevā''nandayāti | yadā hyevaiṣa etasminnadṛśye'nātmye'nirukte'nilayane'bhayaṃ pratiṣṭhāṃ vindate | atha so'bhayaṃ gato bhavati | yadā hyevaiṣa etasminnudaramantaraṃ kurute | atha tasya bhayaṃ bhavati | tatveva bhayaṃ viduṣo'manvānasya | tadapyeṣa śloko bhavati || 1 || iti saptamo'nuvākaḥ ||",
         "translation": "In the beginning was verily this Non-existence. From that the existent was born. That created Itself, by Itself. Therefore, It is called the Self-made, or the Well-made. This which was Self-made—that is taste (joy). Having obtained this taste man becomes blessed, for who can breathe out or breathe in, if this joy were not there in the cavity of the heart; and this Brahman himself brings us joy. When this Atman attains the fearless oneness with Brahman who is invisible, incorporeal, inexplicable, and unsupported, then he becomes free from fear. When however, this makes even the slightest distinction in Brahman, then there is danger for him. That very same Brahman Himself becomes the source fo fear for him who makes a difference, and who reflects not. To the same effect, there is the following verse.",
         "cluster": "brahman_definition",
-        "ontological_scope": "vyavahārika",
+        "ontological_scope": "dual-register",
         "pedagogical_role": "define_brahman_as_bliss",
         "cognitive_mode": "contemplative",
-        "pedagogical_stage": "nididhyāsana",
+        "pedagogical_stage": "nididhyasana",
         "status": "VERIFIED",
         "prakriya": "experiential_definition",
         "adhikara_level": "madhyama"
@@ -15196,7 +15196,7 @@
         "cluster": "contemplative_inquiry",
         "ontological_scope": "dual-register",
         "pedagogical_role": "recognize_anandamaya_brahman",
-        "pedagogical_stage": "nididhyāsana",
+        "pedagogical_stage": "nididhyasana",
         "cognitive_mode": "contemplative_inquiry",
         "status": "VERIFIED",
         "prakriya": "contemplative_inquiry",
@@ -15372,10 +15372,10 @@
         "transliteration": "bhīṣā'smādvātaḥ pavate | bhīṣodeti sūryaḥ | bhīṣā'smādagniścendraśca | mṛtyurdhāvati pañcama iti | saiṣā''nandasya mīmāṃsā bhavati | yuvā syātsādhuyuvā'dhyāyakaḥ | āśiṣṭho dṛḍhiṣṭho baliṣṭhaḥ | tasyeyaṃ pṛthivī sarvā vittasya pūrṇā syāt | sa eko mānuṣa ānandaḥ | te ye śataṃ mānuṣā ānandāḥ || 1 ||",
         "translation": "Through fear of Him blows the wind. Through fear of Him rises the sun. Through fear of Him again Fire and Moon, and lastly the fifth, Death, proceeds to their respective duties. The following is the enquiry concerning the Bliss (Brahmananda Rasa). Suppose there be a youth, good, well-versed in the scriptures, well disciplined, resolute, and very strong. Suppose to him belongs all this earth full of wealth. This is one human bliss.",
         "cluster": "experiential_scale",
-        "ontological_scope": "vyavahārika",
+        "ontological_scope": "dual-register",
         "pedagogical_role": "establish_bliss_baseline",
         "cognitive_mode": "contemplative",
-        "pedagogical_stage": "nididhyāsana",
+        "pedagogical_stage": "nididhyasana",
         "status": "VERIFIED",
         "prakriya": "experiential_comparison",
         "adhikara_level": "madhyama"
@@ -15386,10 +15386,10 @@
         "transliteration": "sa eko manuṣyagandharvāṇāmānandaḥ | śrotriyasya cākāmahatasya | te ye śataṃ manuṣyagandharvāṇāmānandāḥ | sa eko devagandharvāṇāmānandaḥ | śrotriyasya cākāmahatasya | te ye śataṃ devagandharvāṇāmānandāḥ | sa ekaḥ pitṛṇāṃ ciralokalokānāmānandaḥ | śrotriyasya cākāmahatasya | te ye śataṃ pitṛṇāṃ ciralokalokānāmānandāḥ | sa eka ājānajānāṃ devānāmānandaḥ || 2 ||",
         "translation": "This unit of bliss of man multiplied hundred fold is the bliss of human Gandharvas and this is also the bliss of one, versed in the Vedas and who is free from desires. A hundred-fold of the bliss of the human-Gandharvas is the unit of measure of the bliss of the celestial Gandharvas. This is the same as the bliss of one who is well versed in the Vedas and who is free from desires. A hundred-fold of the bliss of the celestial-Gandharvas is the unit of measure of the joy of the Manes, whose world continues for long. the same is the joys expressed by one well-vesed in the vedas and who is free from desires. This joy of Manes whose worlds are relatively immortal, multiplied by a hundred-fold is one unit of trhe joy of the Ajanaja gods born in the Deva loka. And it is also the measure of the bliss of the Srotriya who has transcended all his desires.",
         "cluster": "experiential_scale",
-        "ontological_scope": "vyavahārika",
+        "ontological_scope": "dual-register",
         "pedagogical_role": "expand_bliss_hierarchy",
         "cognitive_mode": "contemplative",
-        "pedagogical_stage": "nididhyāsana",
+        "pedagogical_stage": "nididhyasana",
         "status": "VERIFIED",
         "prakriya": "experiential_comparison",
         "adhikara_level": "madhyama"
@@ -15400,10 +15400,10 @@
         "transliteration": "śrotriyasya cākāmahatasya | te ye śataṃ ājānajānāṃ devānāmānandāḥ | sa ekaḥ karmadevānāṃ devānāmānandaḥ | ye karmaṇā devānapiyanti | śrotriyasya cākāmahatasya | te ye śataṃ karmadevānāṃ devānāmānandāḥ | sa eko devānāmānandaḥ | śrotriyasya cākāmahatasya | te ye śataṃ devānāmānandāḥ | sa eka indrasyā''nandaḥ || 3 ||",
         "translation": "This joy of the Gods born in the deva loka multipled a hundred-fold is a unit of joy of the gods (Karma Devas) who have become so by their special Karma, and it is also the joy of a Srotriya, free from desires. A hundred times this joy of the gods (Karma Devas) who have become so by their special Karma is the simple unit of joy of the gods (office-bearers) and it is also the measure of the bliss of the Srotriya who has transcended all his desires. One hundred measures of the happiness of the gods (office-bearers) is the simple unit of joy of Indra (the king of Gods) and it is also the measure of the bliss of the Srotriya who has transcended all his desires.",
         "cluster": "experiential_scale",
-        "ontological_scope": "vyavahārika",
+        "ontological_scope": "dual-register",
         "pedagogical_role": "continue_bliss_hierarchy",
         "cognitive_mode": "contemplative",
-        "pedagogical_stage": "nididhyāsana",
+        "pedagogical_stage": "nididhyasana",
         "status": "VERIFIED",
         "prakriya": "experiential_comparison",
         "adhikara_level": "madhyama"
@@ -15414,10 +15414,10 @@
         "transliteration": "śrotriyasya cākāmahatasya | te ye śatamindrasyā''nandāḥ | sa eko bṛhaspaterānandaḥ | śrotriyasya cākāmahatasya | te ye śataṃ bṛhaspaterānandāḥ | sa ekaḥ prajāpaterānandaḥ | śrotriyasya cākāmahatasya | te ye śataṃ prajāpaterānandāḥ | sa eko brahmaṇa ānandaḥ | śrotriyasya cākāmahatasya || 4 ||",
         "translation": "A hundred-fold the bliss of Indra is the unit of joy of Brhaspati (the adviser and Guru of the Gods) and it is also the measure of the bliss of the Srotriya who has transcended all his desires. A hundred-fold the bliss of Brhaspati is the unit of joy of Prajapati (the father of creatures of the universe) and it is also the measure of the bliss of the Srotriya who has transcended all his desires. A hundred-fold the bliss of Prajapati is the unit of joy of Brahman which is in no way greater than the bliss of the Srotriya (one who is well versed in the Vedas) and who in his experience of the Reality is devoid of all desires.",
         "cluster": "experiential_scale",
-        "ontological_scope": "vyavahārika",
+        "ontological_scope": "dual-register",
         "pedagogical_role": "culminate_bliss_scale",
         "cognitive_mode": "contemplative",
-        "pedagogical_stage": "nididhyāsana",
+        "pedagogical_stage": "nididhyasana",
         "status": "VERIFIED",
         "prakriya": "experiential_comparison",
         "adhikara_level": "madhyama"
@@ -15428,10 +15428,10 @@
         "transliteration": "sa yaścāyaṃ puruṣe | yaścāsāvāditye | sa ekaḥ | sa ya evaṃvit | asmāllokātpretya | etamannamayamātmānamupasaṅkrāmati | etaṃ prāṇamayamātmānamupasaṅkrāmati | etaṃ manomayamātmānamupasaṅkrāmati | etaṃ vijñānamayamātmānamupasaṅkrāmati | etamānandamayamātmānamupasaṅkrāmati | tadapyeṣa śloko bhavati || 5 || ityaṣṭamo'nuvākaḥ ||",
         "translation": "The Reality in the core of the man and the Reality which is the Sun, are one. He who knows this, on leaving from this world, first attains the Atman made of food, next attains this Atman made of Prana, next attains this Atman made of Buddhi and lastly attains the Atman made of Bliss||. Regarding this there is the following verse:",
         "cluster": "brahman_definition",
-        "ontological_scope": "pāramārthika",
+        "ontological_scope": "paramarathika",
         "pedagogical_role": "unify_macrocosm_microcosm",
         "cognitive_mode": "contemplative",
-        "pedagogical_stage": "nididhyāsana",
+        "pedagogical_stage": "nididhyasana",
         "status": "VERIFIED",
         "prakriya": "identity_reintegration",
         "adhikara_level": "madhyama"
@@ -15909,7 +15909,7 @@
         "ontological_scope": "dual-register",
         "pedagogical_role": "hospitality_and_food_sharing",
         "cognitive_mode": "contemplative",
-        "pedagogical_stage": "nididhyāsana",
+        "pedagogical_stage": "nididhyasana",
         "status": "VERIFIED",
         "prakriya": "ethical_expression_of_realization",
         "adhikara_level": "madhyama"
@@ -15920,10 +15920,10 @@
         "transliteration": "ya evaṃ veda | kṣema iti vāci | yogakṣema iti prāṇāpānayoḥ | karmeti hastayoḥ | gatiriti pādayoḥ | vimuktiriti pāyau | iti mānuṣīḥ samājñāḥ | atha daivīḥ | tṛptiriti vṛṣṭau | balamiti vidyuti || 2 ||",
         "translation": "The Supreme resides in speech as 'well-being'; in Prana and Apana as acquirer and preserver; in the hands as actions, in the legs as movement, in the anus as the activity of excretion. Thus is the meditation of Brahman in respect of man. Now follows the meditation upon the Adhidivika; as satisfaction in the rain, as power in the lightning;",
         "cluster": "brahman_definition",
-        "ontological_scope": "pāramārthika",
+        "ontological_scope": "paramarathika",
         "pedagogical_role": "identity_with_cosmic_nourishment",
         "cognitive_mode": "contemplative",
-        "pedagogical_stage": "nididhyāsana",
+        "pedagogical_stage": "nididhyasana",
         "status": "VERIFIED",
         "prakriya": "realization_expression",
         "adhikara_level": "uttama"
@@ -15937,7 +15937,7 @@
         "ontological_scope": "dual-register",
         "pedagogical_role": "meditate_on_brahman_in_cosmic_functions",
         "cognitive_mode": "contemplative",
-        "pedagogical_stage": "nididhyāsana",
+        "pedagogical_stage": "nididhyasana",
         "status": "VERIFIED",
         "prakriya": "contemplative_correspondence",
         "adhikara_level": "madhyama"
@@ -15951,7 +15951,7 @@
         "ontological_scope": "dual-register",
         "pedagogical_role": "contemplate_brahman_as_cosmic_identity",
         "cognitive_mode": "contemplative",
-        "pedagogical_stage": "nididhyāsana",
+        "pedagogical_stage": "nididhyasana",
         "status": "VERIFIED",
         "prakriya": "contemplative_upasana",
         "adhikara_level": "madhyama"
@@ -15962,13 +15962,13 @@
         "transliteration": "sa ya evaṃvit | asmāllokātpretya | etamannamayamātmānamupasaṅkramya | etaṃ prāṇamayamātmānamupasaṅkramya | etaṃ manomayamātmānamupasaṅkramya | etaṃ vijñānamayamātmānamupasaṅkramya | etamānandamayamātmānamupasaṅkramya | imām̐llokankāmānnī kāmarūpyanusañcaran | etat sāma gāyannāste | hāāāvu hāāāvu hāāāvu || 5 ||",
         "translation": "He who knows this, on leaving this world, first attains this Atman made of food, next attains this Atman made of Prana, next this Atman made of mind, next this Atman made of Buddhi and lastly this Atman made of Bliss. And thereafter, eating what he likes, and assuming any form according to his wishes, he roams upon the face of this globe and sits singing the following Sama song of joy: Haaavu, Haaavu, Haaavu",
         "cluster": "identity_analysis",
-        "ontological_scope": "pāramārthika",
+        "ontological_scope": "paramarathika",
         "pedagogical_role": "describe_transcendence_of_sheaths",
         "cognitive_mode": "contemplative",
-        "pedagogical_stage": "nididhyāsana",
+        "pedagogical_stage": "nididhyasana",
         "status": "VERIFIED",
-        "prakriya": "kosha_transcendence",
-        "adhikara_level": "madhyama"
+        "prakriya": "pancakosa-viveka",
+        "adhikara_level": "uttama"
       },
       {
         "id": "TAITTIRIYA_3_10_6",
@@ -15976,10 +15976,10 @@
         "transliteration": "ahamannamahamannamahamannam | ahamannādo'''hamannādo'''hamannādaḥ | ahaṃ ślokakṛdahaṃ ślokakṛdahaṃ ślokakṛt | ahamasmi prathamajā ṛtāāāsya | pūrvaṃ devebhyo'mṛtasya nāāābhāyi | yo mā dadāti sa ideva māāāvāḥ | ahamannamannamadantamāāādmi | ahaṃ viśvaṃ bhuvanamabhyabhavāāām | suvarna jyotīḥ || 6 || ya evaṃ veda | Ityupaniṣat | iti daśamo'nuvākaḥ || || iti bhṛguvallī samāptā ||  oṃ saha nāvavatu | saha nau bhunaktu | saha vīryaṃ karavāvahai | tejasvi nāvadhītamastu mā vidviṣāvahai | || oṃ śāntiḥ śāntiḥ śāntiḥ ||",
         "translation": "I am the food, I am the food, I am the food. I am the eater of food, I am the eater of food, I am the eater of food. I am the author of the Shloka. I am the author of the Shloka. I am the author of the Shloka. I am the first born (Hiranyagarbha) of the True (of the Eternal and the immortal). I am the center of immortality, prior to the Gods. whoever gives me, he surely does save thus. I am the food that eats him who eats food. I have conquered all, in this world. I am luminous like the sun. He who knows thus (also attains the aforesaid results). This is the Upanishad.  Here ends the Bhrgu chapter.  Om. May He protect us both. May He help us both to enjoy the fruits of scriptural study. May we both exert together to find the true meaning of the sacred text. May our studies be fruitful. May we never quarrel with each other. Om. Peace! Peace! Peace!",
         "cluster": "brahman_definition",
-        "ontological_scope": "pāramārthika",
+        "ontological_scope": "paramarathika",
         "pedagogical_role": "ecstatic_identity_with_brahman",
         "cognitive_mode": "contemplative",
-        "pedagogical_stage": "culmination",
+        "pedagogical_stage": "nididhyasana",
         "status": "VERIFIED",
         "prakriya": "realization_expression",
         "adhikara_level": "uttama"
@@ -16218,12 +16218,12 @@
         "transliteration": "vijñānaṃ yajñaṃ tanute | karmāṇi tanute'pi ca | vijñānaṃ devāḥ sarve | brahma jyeṣṭhamupāsate | vijñānaṃ brahma cedveda | tasmāccenna pramādyati | śarīre pāpmano hitvā | sarvānkāmān samaśnuta iti | tasyaiṣa eva śārīra ātmā | yaḥ pūrvasya | tasmādvā etasmādvijñānamayāt |",
         "translation": "Thereof,—of the former,—this one is the self embodied. Intelligence accomplishes sacrifice, and deeds as well does it accomplish. Intelligence do all Gods worship as Brahman, the Eldest. If Intelligence as Brahman one knows, if from That he swerves not, in body sins forsaking, he all desires achieves.",
         "cluster": "identity_analysis",
-        "ontological_scope": "vyavahārika",
+        "ontological_scope": "dual-register",
         "pedagogical_role": "examine_vijnanamaya_identity",
         "cognitive_mode": "analytic_contemplative",
         "pedagogical_stage": "manana",
         "status": "VERIFIED",
-        "prakriya": "kosha_examination",
+        "prakriya": "pancakosa-viveka",
         "adhikara_level": "madhyama"
       },
       {
@@ -16232,13 +16232,13 @@
         "transliteration": "anyo'ntara ātmā''nandamayaḥ | tenaiṣa pūrṇaḥ | sa vā eṣa puruṣavidha eva | tasya puruṣavidhatām | anvayaṃ puruṣavidhaḥ | tasya priyameva śiraḥ | modo dakṣiṇaḥ pakṣaḥ | pramoda uttaraḥ pakṣaḥ | ānanda ātmā | brahma pucchaṃ pratiṣṭhā | tadapyeṣa śloko bhavati || 1 || iti pañcamo'nuvākaḥ ||",
         "translation": "Than that, verily,—than this one formed of Vijñāna,—there is another self within formed of bliss: by him this one is filled. He, verily, this one, is quite of man’s shape. After his human shape, this one is of man’s shape. Of him, love itself is the head, joy is the right wing, delight is the left wing, bliss is the self, Brahman is the tail, the support. On that, too, there is this verse:",
         "cluster": "identity_analysis",
-        "ontological_scope": "vyavahārika",
+        "ontological_scope": "paramarathika",
         "pedagogical_role": "introduce_anandamaya_identity",
         "cognitive_mode": "analytic_contemplative",
-        "pedagogical_stage": "nididhyāsana",
+        "pedagogical_stage": "nididhyasana",
         "status": "VERIFIED",
-        "prakriya": "kosha_examination",
-        "adhikara_level": "madhyama"
+        "prakriya": "pancakosa-viveka",
+        "adhikara_level": "uttama"
       }
     ],
     "self_check": {
@@ -19137,7 +19137,7 @@
         "status": "VERIFIED",
         "pedagogical_role": "totality-declaration",
         "cognitive_mode": "logical-paradox",
-        "pedagogical_stage": "śravaṇa",
+        "pedagogical_stage": "sravana",
         "ontological_scope": "dual-register",
         "relational_mode": "category-transcendent",
         "concepts": [
@@ -19154,8 +19154,8 @@
         "status": "VERIFIED",
         "pedagogical_role": "mahāvākya-compression",
         "cognitive_mode": "metaphysical-contemplative",
-        "pedagogical_stage": "śravaṇa",
-        "ontological_scope": "pāramārthika",
+        "pedagogical_stage": "sravana",
+        "ontological_scope": "paramarathika",
         "relational_mode": "advaita-explicit",
         "concepts": [
           "brahman",
@@ -19173,12 +19173,12 @@
         "pedagogical_role": "experiential-mapping",
         "cognitive_mode": "analytic-contemplative",
         "pedagogical_stage": "manana",
-        "ontological_scope": "vyavahāra",
+        "ontological_scope": "dual-register",
         "relational_mode": "performative-transition",
         "concepts": [
           "sakshi"
         ],
-        "prakriya": "avasthā-analysis",
+        "prakriya": "avastha-traya-analysis",
         "adhikara_level": "sarva"
       },
       {
@@ -19190,12 +19190,12 @@
         "pedagogical_role": "experiential-mapping",
         "cognitive_mode": "analytic-contemplative",
         "pedagogical_stage": "manana",
-        "ontological_scope": "vyavahāra",
+        "ontological_scope": "dual-register",
         "relational_mode": "performative-transition",
         "concepts": [
           "sakshi"
         ],
-        "prakriya": "avasthā-analysis",
+        "prakriya": "avastha-traya-analysis",
         "adhikara_level": "sarva"
       },
       {
@@ -19207,13 +19207,13 @@
         "pedagogical_role": "causal-layer-identification",
         "cognitive_mode": "analytic-contemplative",
         "pedagogical_stage": "manana",
-        "ontological_scope": "vyavahāra",
+        "ontological_scope": "dual-register",
         "relational_mode": "performative-transition",
         "concepts": [
           "sakshi"
         ],
-        "prakriya": "avasthā-analysis",
-        "adhikara_level": "madhyama"
+        "prakriya": "avastha-traya-analysis",
+        "adhikara_level": "uttama"
       },
       {
         "id": "MANDUKYA_006",
@@ -19224,12 +19224,12 @@
         "pedagogical_role": "causal-integration",
         "cognitive_mode": "analytic-contemplative",
         "pedagogical_stage": "manana",
-        "ontological_scope": "vyavahāra",
+        "ontological_scope": "dual-register",
         "relational_mode": "performative-transition",
         "concepts": [
           "maya"
         ],
-        "prakriya": "scope-clarification",
+        "prakriya": "avastha-traya-analysis",
         "adhikara_level": "madhyama"
       },
       {
@@ -19240,8 +19240,8 @@
         "status": "VERIFIED",
         "pedagogical_role": "radical-negation",
         "cognitive_mode": "apophatic",
-        "pedagogical_stage": "nididhyāsana",
-        "ontological_scope": "pāramārthika",
+        "pedagogical_stage": "nididhyasana",
+        "ontological_scope": "paramarathika",
         "relational_mode": "non-differentiable",
         "concepts": [
           "brahman",
@@ -19275,8 +19275,8 @@
         "status": "VERIFIED",
         "pedagogical_role": "contemplative-assimilation",
         "cognitive_mode": "participatory",
-        "pedagogical_stage": "nididhyāsana",
-        "ontological_scope": "vyavahāra",
+        "pedagogical_stage": "nididhyasana",
+        "ontological_scope": "dual-register",
         "relational_mode": "performative-transition",
         "concepts": [
           "sakshi"
@@ -19292,8 +19292,8 @@
         "status": "VERIFIED",
         "pedagogical_role": "contemplative-assimilation",
         "cognitive_mode": "participatory",
-        "pedagogical_stage": "nididhyāsana",
-        "ontological_scope": "vyavahāra",
+        "pedagogical_stage": "nididhyasana",
+        "ontological_scope": "dual-register",
         "relational_mode": "performative-transition",
         "concepts": [
           "sakshi"
@@ -19309,8 +19309,8 @@
         "status": "VERIFIED",
         "pedagogical_role": "contemplative-assimilation",
         "cognitive_mode": "participatory",
-        "pedagogical_stage": "nididhyāsana",
-        "ontological_scope": "vyavahāra",
+        "pedagogical_stage": "nididhyasana",
+        "ontological_scope": "dual-register",
         "relational_mode": "performative-transition",
         "concepts": [
           "sakshi"
@@ -19326,8 +19326,8 @@
         "status": "VERIFIED",
         "pedagogical_role": "silence-consummation",
         "cognitive_mode": "apophatic",
-        "pedagogical_stage": "culmination",
-        "ontological_scope": "pāramārthika",
+        "pedagogical_stage": "nididhyasana",
+        "ontological_scope": "paramarathika",
         "relational_mode": "non-differentiable",
         "concepts": [
           "brahman"

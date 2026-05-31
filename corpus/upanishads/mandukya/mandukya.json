@@ -36,7 +36,7 @@
       "status": "VERIFIED",
       "prakriyā": "identity",
       "pedagogical_role": "mahāvākya-compression",
-      "ontological_scope": "pāramārthika",
+      "ontological_scope": "paramarathika",
       "relational_mode": "advaita-explicit",
       "concepts": [
         "brahman",
@@ -51,11 +51,14 @@
       "status": "VERIFIED",
       "prakriyā": "avasthā-analysis",
       "pedagogical_role": "experiential-mapping",
-      "ontological_scope": "vyavahāra",
+      "ontological_scope": "dual-register",
       "relational_mode": "performative-transition",
       "concepts": [
         "sakshi"
-      ]
+      ],
+      "prakriya": "avastha-traya-analysis",
+      "pedagogical_stage": "manana",
+      "adhikara_level": "sarva"
     },
     {
       "id": "MANDUKYA_004",
@@ -65,11 +68,14 @@
       "status": "VERIFIED",
       "prakriyā": "avasthā-analysis",
       "pedagogical_role": "experiential-mapping",
-      "ontological_scope": "vyavahāra",
+      "ontological_scope": "dual-register",
       "relational_mode": "performative-transition",
       "concepts": [
         "sakshi"
-      ]
+      ],
+      "prakriya": "avastha-traya-analysis",
+      "pedagogical_stage": "manana",
+      "adhikara_level": "sarva"
     },
     {
       "id": "MANDUKYA_005",
@@ -79,11 +85,14 @@
       "status": "VERIFIED",
       "prakriyā": "avasthā-analysis",
       "pedagogical_role": "causal-layer-identification",
-      "ontological_scope": "vyavahāra",
+      "ontological_scope": "dual-register",
       "relational_mode": "performative-transition",
       "concepts": [
         "sakshi"
-      ]
+      ],
+      "prakriya": "avastha-traya-analysis",
+      "pedagogical_stage": "manana",
+      "adhikara_level": "uttama"
     },
     {
       "id": "MANDUKYA_006",
@@ -93,11 +102,14 @@
       "status": "VERIFIED",
       "prakriyā": "scope-clarification",
       "pedagogical_role": "causal-integration",
-      "ontological_scope": "vyavahāra",
+      "ontological_scope": "dual-register",
       "relational_mode": "performative-transition",
       "concepts": [
         "maya"
-      ]
+      ],
+      "prakriya": "avastha-traya-analysis",
+      "pedagogical_stage": "manana",
+      "adhikara_level": "madhyama"
     },
     {
       "id": "MANDUKYA_007",
@@ -107,7 +119,7 @@
       "status": "VERIFIED",
       "prakriyā": "apavāda",
       "pedagogical_role": "radical-negation",
-      "ontological_scope": "pāramārthika",
+      "ontological_scope": "paramarathika",
       "relational_mode": "non-differentiable",
       "concepts": [
         "brahman",
@@ -136,7 +148,7 @@
       "status": "VERIFIED",
       "prakriyā": "symbolic-correlation",
       "pedagogical_role": "contemplative-assimilation",
-      "ontological_scope": "vyavahāra",
+      "ontological_scope": "dual-register",
       "relational_mode": "performative-transition",
       "concepts": [
         "sakshi"
@@ -150,7 +162,7 @@
       "status": "VERIFIED",
       "prakriyā": "symbolic-correlation",
       "pedagogical_role": "contemplative-assimilation",
-      "ontological_scope": "vyavahāra",
+      "ontological_scope": "dual-register",
       "relational_mode": "performative-transition",
       "concepts": [
         "sakshi"
@@ -164,7 +176,7 @@
       "status": "VERIFIED",
       "prakriyā": "symbolic-correlation",
       "pedagogical_role": "contemplative-assimilation",
-      "ontological_scope": "vyavahāra",
+      "ontological_scope": "dual-register",
       "relational_mode": "performative-transition",
       "concepts": [
         "sakshi"
@@ -178,7 +190,7 @@
       "status": "VERIFIED",
       "prakriyā": "symbolic-collapse",
       "pedagogical_role": "silence-consummation",
-      "ontological_scope": "pāramārthika",
+      "ontological_scope": "paramarathika",
       "relational_mode": "non-differentiable",
       "concepts": [
         "brahman"

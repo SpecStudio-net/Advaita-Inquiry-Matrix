@@ -19,9 +19,16 @@
         "pedagogical_role": "examine_vijnanamaya_identity",
         "adhikāra_level": "madhyama",
         "cognitive_mode": "analytic_contemplative",
-        "pedagogical_stage": "identity_inquiry"
+        "pedagogical_stage": "manana",
+        "prakriya": "pancakosa-viveka",
+        "adhikara_level": "madhyama",
+        "ontological_scope": "dual-register"
       },
-      "status": "VERIFIED"
+      "status": "VERIFIED",
+      "prakriya": "pancakosa-viveka",
+      "pedagogical_stage": "manana",
+      "adhikara_level": "madhyama",
+      "ontological_scope": "dual-register"
     },
     {
       "id": "TAITTIRIYA_2_5_2",
@@ -34,9 +41,16 @@
         "pedagogical_role": "introduce_anandamaya_identity",
         "adhikāra_level": "madhyama",
         "cognitive_mode": "analytic_contemplative",
-        "pedagogical_stage": "subtle_identity_recognition"
+        "pedagogical_stage": "nididhyasana",
+        "prakriya": "pancakosa-viveka",
+        "adhikara_level": "uttama",
+        "ontological_scope": "paramarathika"
       },
-      "status": "VERIFIED"
+      "status": "VERIFIED",
+      "prakriya": "pancakosa-viveka",
+      "pedagogical_stage": "nididhyasana",
+      "adhikara_level": "uttama",
+      "ontological_scope": "paramarathika"
     }
   ],
   "self_check": {
