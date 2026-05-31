@@ -2,7 +2,6 @@ import re
 import json
 import yaml
 import logging
-import argparse
 from pathlib import Path
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
