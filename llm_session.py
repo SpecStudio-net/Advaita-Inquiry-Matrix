@@ -23,7 +23,7 @@ logging.basicConfig(level=logging.WARNING, format="%(levelname)s: %(message)s")
 
 # ---------- Config ----------
 
-MODEL = os.environ.get("AIM_MODEL", "claude-opus-4-7")
+MODEL = os.environ.get("AIM_MODEL", "claude-opus-4-8")
 MAX_API_RETRIES = 3
 BACKOFF_BASE = 1.0
 

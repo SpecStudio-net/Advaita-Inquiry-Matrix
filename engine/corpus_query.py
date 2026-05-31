@@ -1,6 +1,13 @@
 import json
+import os
 import unicodedata
 from pathlib import Path
+
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+_CORPUS_PATH = Path(os.environ.get(
+    "AIM_CORPUS_DB",
+    str(_REPO_ROOT / "corpus_database.json")
+))
 
 _CORPUS: list = None  # loaded once at first query
 
@@ -8,8 +15,7 @@ _CORPUS: list = None  # loaded once at first query
 def _load() -> list:
     global _CORPUS
     if _CORPUS is None:
-        path = Path("corpus_database.json")
-        data = json.loads(path.read_text(encoding="utf-8"))
+        data = json.loads(_CORPUS_PATH.read_text(encoding="utf-8"))
         _CORPUS = [u for rec in data for u in rec.get("units", [])]
     return _CORPUS
 

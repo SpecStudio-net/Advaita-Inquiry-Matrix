@@ -1,8 +1,13 @@
 import json
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 
-STUDENTS_DIR = Path("students")
+# Anchor paths to the repo root (parent of engine/), not the process CWD.
+# This prevents students/ and corpus_database.json being created in different
+# locations depending on how the app is launched (streamlit vs python -m vs tests).
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+STUDENTS_DIR = Path(os.environ.get("AIM_STUDENTS_DIR", str(_REPO_ROOT / "students")))
 
 
 def _now() -> str:

@@ -219,3 +219,18 @@
 └── upanishad_index.txt
 
 55 directories, 164 files
+
+---
+NOTE (Task 2 audit, 2026-06-01): This map predates the current architecture and is
+incomplete. The following active runtime components are NOT shown above:
+  engine/           — runtime engine package (state_machine.py, prakriya_selector.py,
+                      student_record.py, corpus_query.py)
+  llm_session.py    — LLM session layer (signal extraction, response generation)
+  aim_app.py        — Streamlit chat interface
+  parsers/          — corpus parsers (one per text)
+  corpus_loader.py  — corpus ingestion utility
+  test_engine.py    — integration test script
+  eval_signal_haiku.py — signal-extraction evaluation
+  docs/             — project documentation (added 2026-06-01)
+
+The canonical architectural reference is system/state_machine/AIM_state_machine_v3.md.

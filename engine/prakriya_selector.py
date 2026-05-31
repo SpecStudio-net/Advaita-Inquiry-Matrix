@@ -176,6 +176,40 @@ PRAKRIYA_MAP = {
         },
     },
 
+    # The ānandamaya-kośa (bliss/causal-body) identification.
+    # Added by Task 2 audit (2026-06-01): the fifth sheath was absent from the taxonomy.
+    # This is the ROOT case — borders the mūlāvidyā limit per the Scherf library
+    # (AV15: causal body is the seed of ignorance persisting in suṣupti).
+    # Routing PENDING confirmation from the philosophical authority.
+    # Pedagogical note: avoid bliss-as-goal-framing (ānandamaya is a kośa rooted in
+    # avidyā, not Brahman — Śaṅkara, ānandamayo'bhyāsāt). Like saksi-adhyasa, avoid
+    # witness-stabilization at nididhyāsana: the causal-bliss "I" must dissolve, not
+    # be reinforced as an object.
+    "ananda-adhyasa": {
+        "manana": {
+            "primary":    "avastha-traya",
+            "supporting": ["panca-kosa-viveka", "karana-sarira-analysis"],
+            "avoid":      ["bliss-as-goal-framing"],
+            "corpus": {
+                "prakriya":          "avastha-traya-analysis",
+                "pedagogical_stage": "manana",
+                "adhikara_level":    "uttama",
+                "ontological_scope": "dual-register",
+            },
+        },
+        "nididhyasana": {
+            "primary":    "anandamaya-negation",
+            "supporting": ["neti-neti", "witness-brahman-identity"],
+            "avoid":      ["bliss-as-goal-framing", "witness-stabilization"],
+            "corpus": {
+                "prakriya":          "pancakosa-viveka",
+                "pedagogical_stage": "nididhyasana",
+                "adhikara_level":    "uttama",
+                "ontological_scope": "paramarathika",
+            },
+        },
+    },
+
     "saksi-adhyasa": {
         "nididhyasana": {
             "primary":    "witness-brahman-identity",
@@ -190,6 +224,11 @@ PRAKRIYA_MAP = {
         },
     },
 
+    # NOTE: visaya-adhyasa-moksa is OUTSIDE the Scherf library's formal scope.
+    # Mokṣa is recognition, not a produced state (design doc §9 ruling 2, §11(4)).
+    # The library cannot validate this routing. AIM retains it on its own
+    # pedagogical authority as a teaching engine. Task 3 validation will not
+    # cover this error type.
     "visaya-adhyasa-moksa": {
         "any": {
             "primary":    "nitya-mukta-pointing",
@@ -309,12 +348,13 @@ QUALIFICATION_ROUTING = {
 # ---------- Error metadata ----------
 
 ERROR_LAYERS = {
-    "deha-adhyasa":        "gross",
-    "prana-adhyasa":       "vital",
-    "manas-adhyasa":       "mental",
-    "vijnana-adhyasa":     "intellectual",
-    "saksi-adhyasa":       "subtle",
-    "visaya-adhyasa-moksa": "liberation",
+    "deha-adhyasa":         "gross",
+    "prana-adhyasa":        "vital",
+    "manas-adhyasa":        "mental",
+    "vijnana-adhyasa":      "intellectual",
+    "ananda-adhyasa":       "causal",    # ānandamaya-kośa, root/mūlāvidyā-bordering
+    "saksi-adhyasa":        "subtle",
+    "visaya-adhyasa-moksa": "liberation",  # outside Scherf library formal scope
 }
 
 

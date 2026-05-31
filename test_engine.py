@@ -2,7 +2,7 @@
 Engine integration test — simulates a two-session student arc.
 
 Session 1: new Stage 0 student, mumuksutva deficient
-Session 2: same student, mumuksutva developing, sraddhа deficient
+Session 2: same student, mumuksutva developing, sraddha deficient
 Then: a Stage 1 student with deha-adhyasa at sravana
 """
 
@@ -59,7 +59,7 @@ show("SESSION CLOSE — Stage 0 session 1", process({
 
 # ── Stage 0: session 2 ──────────────────────────────────────────
 
-show("SESSION OPEN — session 2 (mumuksutva developing, sraddhа absent)", process({
+show("SESSION OPEN — session 2 (mumuksutva developing, sraddha absent)", process({
     "event_type": "session_open",
     "student_id": "test_student_01",
     "session_id": "s02",

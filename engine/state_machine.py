@@ -311,33 +311,71 @@ def _update_errors_from_summary(record: dict, summary: dict, stage: str) -> None
             status=record_status,
         )
 
-    # Resolve errors that haven't appeared in 2 consecutive sessions
+    # Errors that were weakening and did NOT appear this session move to
+    # "possibly_resolved". Full resolution is confirmed at the next session's
+    # open probe; if the error re-presents, upsert_active_error will reactivate it.
+    presented_types = {e.get("type") for e in summary.get("errors_presented", [])}
     for err in record.get("active_errors", []):
-        sessions = record.get("session_history", [])
-        presented_types = [e.get("type") for e in summary.get("errors_presented", [])]
         if err["error_type"] not in presented_types and err["status"] == "weakening":
-            # Mark as possibly resolved — confirmed at next session if probe passes
-            err["status"] = "weakening"  # conservative; full resolution requires next session probe
+            err["status"] = "possibly_resolved"
 
     # Assess longitudinal stage progression
     _assess_stage_progression(record, summary)
 
 
+_STAGE_ORDER = ["adhikari", "sravana", "manana", "nididhyasana", "jnana-nistha"]
+
+# Errors whose weakening is characteristic of each stage transition.
+# A student advances from stage N when the characteristic errors of stage N
+# are predominantly weakening across sessions AND at least 2 sessions have passed.
+_CHARACTERISTIC_ERRORS = {
+    "adhikari":      {"deha-adhyasa", "prana-adhyasa"},
+    "sravana":       {"deha-adhyasa", "prana-adhyasa", "manas-adhyasa"},
+    "manana":        {"manas-adhyasa", "vijnana-adhyasa", "ananda-adhyasa"},
+    "nididhyasana":  {"ananda-adhyasa", "saksi-adhyasa"},
+}
+
+
 def _assess_stage_progression(record: dict, summary: dict) -> None:
     """
-    Conservative: advance only when characteristic errors are weakening
-    across multiple sessions AND next-stage markers have appeared.
-    Never regress without persistent evidence across multiple sessions.
+    Conservative stage-progression logic.
+
+    Advances when: (a) at least 2 sessions in history, AND (b) all characteristic
+    errors for the current stage are weakening or absent in the record. Never
+    advances more than one stage per session. Never advances jnana-nistha.
+
+    Regression: flagged in summary but NOT immediately applied — requires persistent
+    evidence across multiple sessions (probe at session open will surface it).
     """
     stage = record["longitudinal_state"]["stage"]
     sessions = record.get("session_history", [])
     if len(sessions) < 2:
-        return  # never advance on a single session
+        return
+    if stage not in _STAGE_ORDER:
+        return  # purva-adhikari handled separately; jnana-nistha is terminal
+    idx = _STAGE_ORDER.index(stage)
+    if idx >= len(_STAGE_ORDER) - 1:
+        return  # already at terminal stage
 
-    regression = summary.get("regression_observed", False)
-    if regression:
-        # Log but don't immediately regress — require persistence
-        pass  # handled in next session's assessment
+    characteristic = _CHARACTERISTIC_ERRORS.get(stage, set())
+    if not characteristic:
+        return
+
+    active_errors = {e["error_type"]: e for e in record.get("active_errors", [])}
+
+    all_weakening = all(
+        error_type not in active_errors
+        or active_errors[error_type]["status"] in ("weakening",)
+        for error_type in characteristic
+    )
+
+    if all_weakening:
+        next_stage = _STAGE_ORDER[idx + 1]
+        student_record.update_longitudinal_stage(
+            record, next_stage, "medium",
+            f"Characteristic errors for {stage!r} weakening across sessions. "
+            f"Conservative advance to {next_stage!r}.",
+        )
 
 
 # ---------- Helpers ----------
