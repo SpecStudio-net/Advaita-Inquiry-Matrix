@@ -3,6 +3,12 @@ import os
 from datetime import datetime, timezone
 from pathlib import Path
 
+try:
+    from filelock import FileLock as _FileLock
+    _HAS_FILELOCK = True
+except ImportError:
+    _HAS_FILELOCK = False
+
 # Anchor paths to the repo root (parent of engine/), not the process CWD.
 # This prevents students/ and corpus_database.json being created in different
 # locations depending on how the app is launched (streamlit vs python -m vs tests).
@@ -73,7 +79,12 @@ def load(student_id: str) -> dict:
 def save(student_id: str, record: dict) -> None:
     STUDENTS_DIR.mkdir(exist_ok=True)
     path = STUDENTS_DIR / f"{student_id}.json"
-    path.write_text(json.dumps(record, indent=2, ensure_ascii=False), encoding="utf-8")
+    data = json.dumps(record, indent=2, ensure_ascii=False)
+    if _HAS_FILELOCK:
+        with _FileLock(str(path) + ".lock", timeout=5):
+            path.write_text(data, encoding="utf-8")
+    else:
+        path.write_text(data, encoding="utf-8")
 
 
 # ---------- Qualification helpers ----------

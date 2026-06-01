@@ -2,17 +2,34 @@
 AIM — Advaita Inquiry Matrix
 Streamlit chat interface.
 
-Run with:
+Run locally:
     streamlit run aim_app.py
+
+Deploy:
+    Push to GitHub and connect to Streamlit Community Cloud.
+    Add ANTHROPIC_API_KEY in the app's Secrets panel.
 """
 
-import getpass
+import json
+import os
 from datetime import datetime, timezone
+from pathlib import Path
 
 from dotenv import load_dotenv
 load_dotenv(override=True)
 
 import streamlit as st
+
+# ---------- Secrets → environment (Streamlit Cloud) -------------------------
+# On Streamlit Community Cloud, secrets are in st.secrets rather than .env.
+# We copy them into os.environ so the rest of the codebase reads them the
+# same way whether running locally or in the cloud.
+
+for _key in ("ANTHROPIC_API_KEY", "AIM_MODEL", "AIM_GUARDRAIL_MODEL"):
+    if _key not in os.environ and _key in st.secrets:
+        os.environ[_key] = st.secrets[_key]
+
+# ---------- Late imports (after env vars are set) ---------------------------
 
 from engine.state_machine import process as sm_process
 from llm_session import (
@@ -25,32 +42,81 @@ from llm_session import (
     _ckpt_append,
     _ckpt_delete,
     _ckpt_path,
+    LOGS_DIR,
 )
 
-# ---------- Page config ----------
+# ---------- Page config -----------------------------------------------------
 
 st.set_page_config(page_title="AIM", page_icon="🪔", layout="centered")
-st.title("AIM — Advaita Inquiry Matrix")
 
-# ---------- Session state defaults ----------
+# ---------- Login / consent screen ------------------------------------------
+# Shown before anything else. Sets st.session_state.user_name on acceptance.
 
-STUDENT_ID = getpass.getuser()  # single-user assumption: system login name = student id
+if "user_name" not in st.session_state:
+    st.title("AIM — Advaita Inquiry Matrix")
+    st.markdown(
+        "AIM is a structured inquiry system in the Advaita Vedānta teaching "
+        "tradition. It diagnoses the specific form of misidentification that is "
+        "active and selects the appropriate classical teaching method in response."
+    )
+    st.divider()
+
+    with st.form("login_form"):
+        st.subheader("Before you begin")
+        name = st.text_input(
+            "Your name",
+            placeholder="How would you like to be addressed?",
+            help="Used to identify your session. No account required.",
+        )
+
+        st.info(
+            "**Testing notice** \n\n"
+            "AIM is currently in a testing phase. Your conversation — including "
+            "every exchange with the teaching engine — will be logged and reviewed "
+            "by the development team for the sole purpose of improving the system. "
+            "Logs are not shared with third parties. \n\n"
+            "If you have questions about data handling, contact "
+            "hello@specstudio.net before beginning."
+        )
+
+        agreed = st.checkbox(
+            "I understand that my session will be logged for testing and evaluation purposes."
+        )
+
+        submitted = st.form_submit_button("Begin", type="primary")
+
+        if submitted:
+            if not name.strip():
+                st.error("Please enter your name to continue.")
+            elif not agreed:
+                st.error("Please acknowledge the testing notice to continue.")
+            else:
+                st.session_state.user_name = name.strip()
+                st.rerun()
+
+    st.stop()
+
+# ---------- Resolved student ID (post-login) --------------------------------
+
+STUDENT_ID = st.session_state.user_name
+
+# ---------- Session state defaults ------------------------------------------
 
 for key, default in {
-    "active":      False,
-    "messages":    [],
-    "transcript":  [],
-    "directive":   {},
-    "session_id":  "",
-    "show_engine": False,
+    "active":           False,
+    "messages":         [],
+    "transcript":       [],
+    "directive":        {},
+    "session_id":       "",
+    "show_engine":      False,
+    "session_log_path": None,
 }.items():
     if key not in st.session_state:
         st.session_state[key] = default
 
-# ---------- Engine panel renderer ----------
+# ---------- Engine panel renderer -------------------------------------------
 
 def _render_engine_panel(signal: dict, directive: dict, guardrail: dict | None = None) -> None:
-    """Render a collapsible engine internals panel."""
     with st.expander("Engine", expanded=False):
         col1, col2 = st.columns(2)
 
@@ -97,25 +163,23 @@ def _render_engine_panel(signal: dict, directive: dict, guardrail: dict | None =
                     f"Challenge: `{intervention.get('challenge_level')}`"
                 )
 
-        # Guardrail results — shown below the two columns
         if guardrail is not None:
             if guardrail.get("ok"):
                 st.markdown("**Guardrail** ✓ _no violations_")
             else:
                 st.markdown(f"**Guardrail** ⚠ {len(guardrail['violations'])} violation(s)")
                 for v in guardrail["violations"]:
-                    severity_colour = {"high": "🔴", "medium": "🟡", "low": "🟢"}.get(
+                    colour = {"high": "🔴", "medium": "🟡", "low": "🟢"}.get(
                         v.get("severity", "medium"), "🟡"
                     )
-                    st.markdown(
-                        f"{severity_colour} `{v['type']}` — _{v.get('evidence', '')}_ "
-                    )
+                    st.markdown(f"{colour} `{v['type']}` — _{v.get('evidence', '')}_ ")
 
 
-# ---------- Sidebar ----------
+# ---------- Sidebar ---------------------------------------------------------
 
 with st.sidebar:
     st.header("Session")
+    st.caption(f"Signed in as **{STUDENT_ID}**")
 
     if not st.session_state.active:
         if st.button("Start Session", type="primary"):
@@ -123,6 +187,7 @@ with st.sidebar:
             st.session_state.session_id = session_id
             st.session_state.messages = []
             st.session_state.transcript = []
+            st.session_state.session_log_path = None
 
             with st.spinner("Opening session…"):
                 directive = sm_process({
@@ -145,6 +210,26 @@ with st.sidebar:
                 "directive": directive,
             })
             st.session_state.active = True
+            st.rerun()
+
+        # Session log download (available after a session has been closed)
+        if st.session_state.session_log_path:
+            log_path = Path(st.session_state.session_log_path)
+            if log_path.exists():
+                st.divider()
+                st.download_button(
+                    label="Download session log",
+                    data=log_path.read_bytes(),
+                    file_name=log_path.name,
+                    mime="application/x-ndjson",
+                    help="Your session log in JSONL format. "
+                         "You may be asked to share this with the development team.",
+                )
+
+        st.divider()
+        if st.button("Sign out", type="tertiary"):
+            for key in list(st.session_state.keys()):
+                del st.session_state[key]
             st.rerun()
 
     else:
@@ -171,6 +256,10 @@ with st.sidebar:
                 })
                 _ckpt_delete(_ckpt_path(st.session_state.session_id))
 
+            # Remember the log path so the download button appears
+            log_path = LOGS_DIR / f"{st.session_state.session_id}.jsonl"
+            st.session_state.session_log_path = str(log_path)
+
             final_stage = result["longitudinal_state"]["stage"]
             st.session_state.messages.append({
                 "role":    "assistant",
@@ -179,7 +268,11 @@ with st.sidebar:
             st.session_state.active = False
             st.rerun()
 
-# ---------- Chat display ----------
+# ---------- Main area title -------------------------------------------------
+
+st.title("AIM — Advaita Inquiry Matrix")
+
+# ---------- Chat display ----------------------------------------------------
 
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
@@ -187,7 +280,7 @@ for msg in st.session_state.messages:
     if st.session_state.show_engine and "signal" in msg:
         _render_engine_panel(msg["signal"], msg["directive"], msg.get("guardrail"))
 
-# ---------- Chat input ----------
+# ---------- Chat input ------------------------------------------------------
 
 if st.session_state.active:
     if user_input := st.chat_input("Your response…"):
@@ -250,6 +343,7 @@ if st.session_state.active:
             "signal":    signal,
             "directive": st.session_state.directive,
             "teacher":   response,
+            "guardrail": guardrail,
         }
         _ckpt_append(_ckpt_path(st.session_state.session_id), turn)
         _log(st.session_state.session_id, turn)

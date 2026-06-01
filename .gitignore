@@ -1,1 +1,9 @@
 __pycache__/
+*.pyc
+.env
+.streamlit/secrets.toml
+students/
+logs/sessions/
+logs/checkpoints/
+logs/eval_signal_haiku.jsonl
+.pytest_cache/
