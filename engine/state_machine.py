@@ -108,20 +108,20 @@ def _handle_signal(event: dict) -> dict:
     signal = event.get("signal", {})
 
     if stage == "purva-adhikari":
-        # Advance immediately if adhyāsa errors appear at medium+ confidence —
-        # these are Stage 1+ errors; the student is past the qualification stage.
+        # If adhyāsa errors appear at medium+ confidence, use adhikari-level
+        # prakriya and corpus for this turn — the teacher needs the right tools.
+        # But do NOT commit the stage change: a student with Vedantic vocabulary
+        # may present saksi-adhyasa as a memorised claim without genuine
+        # qualification. Permanent promotion is deferred to session_close, where
+        # is_ready_for_adhikari() applies the full qualification gate.
         confident_adhyasa = [
             m for m in signal.get("error_markers", [])
             if m.get("type") in _ADHYASA_ERRORS
             and m.get("confidence") in ("medium", "high")
         ]
         if confident_adhyasa:
-            student_record.update_longitudinal_stage(
-                record, "adhikari", "medium",
-                "Adhyāsa errors at medium+ confidence observed — student presenting past Stage 0.",
-            )
-            student_record.save(student_id, record)
             stage = "adhikari"
+            record["longitudinal_state"]["stage"] = "adhikari"
         else:
             return _redirect_directive(record, event)
 
@@ -190,8 +190,15 @@ def _handle_session_close(event: dict) -> dict:
                 record, "adhikari", "medium",
                 "All decisive qualifications developing/present across 2+ sessions."
             )
+        else:
+            _refresh_longitudinal_basis(record)
     else:
+        stage_before = record["longitudinal_state"]["stage"]
         _update_errors_from_summary(record, summary, stage)
+        if record["longitudinal_state"]["stage"] == stage_before:
+            # Stage didn't advance — still refresh basis and timestamp so the
+            # next session open reflects current error state, not stale context.
+            _refresh_longitudinal_basis(record)
 
     session_entry = {
         "session_id":          event.get("session_id", ""),
@@ -393,6 +400,24 @@ def _assess_stage_progression(record: dict, summary: dict) -> None:
             f"Characteristic errors for {stage!r} weakening across sessions. "
             f"Conservative advance to {next_stage!r}.",
         )
+
+
+# ---------- Longitudinal basis refresh ----------
+
+def _refresh_longitudinal_basis(record: dict) -> None:
+    """Update basis and timestamp without changing stage or confidence.
+
+    Called at session_close when the stage doesn't advance, so the next
+    session open has current error state rather than the prior session's text.
+    """
+    active = record.get("active_errors", [])
+    if not active:
+        basis = "No active errors on record."
+    else:
+        parts = [f"{e['error_type']} ({e['status']})" for e in active]
+        basis = "Active errors: " + ", ".join(parts) + "."
+    record["longitudinal_state"]["basis"] = basis
+    record["longitudinal_state"]["last_updated"] = _now()
 
 
 # ---------- Helpers ----------

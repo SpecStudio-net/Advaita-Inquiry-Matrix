@@ -84,6 +84,7 @@ def guardrail_check(response: str, directive: dict,
     # Stage 2 — Haiku LLM check
     avoid = (directive.get("prakriya") or {}).get("avoid", [])
     error_type = (directive.get("presenting_error") or {}).get("type") or "none"
+    stage = (directive.get("longitudinal_state") or {}).get("stage", "unknown")
 
     try:
         result = call_with_repair_fn(
@@ -91,6 +92,7 @@ def guardrail_check(response: str, directive: dict,
             [{
                 "role": "user",
                 "content": (
+                    f"Student stage: {stage}\n"
                     f"Error being addressed: {error_type}\n"
                     f"Contraindicated prakriyas: {avoid}\n\n"
                     f"## Response to check\n{response}"

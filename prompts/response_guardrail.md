@@ -9,6 +9,9 @@ Return only a JSON object. No preamble, no explanation, no markdown fences.
 
 ## Context (injected per call)
 
+`Student stage` — the student's current longitudinal stage (`purva-adhikari`, `adhikari`,
+`sravana`, `manana`, `nididhyasana`, `jnana-nistha`). Use this to calibrate thresholds:
+some framings are appropriate at one stage and violations at another.
 `Error being addressed` — the adhyāsa or qualification error the teacher is responding to.
 `Contraindicated prakriyās` — approaches explicitly flagged as harmful for this student
 at this stage. If the response uses or implies one of these, it is a violation regardless
@@ -20,7 +23,7 @@ of whether the framing seems helpful.
 
 | type | what it is |
 |---|---|
-| `witness-stabilization` | stabilises the witness as a refined object — "you ARE the witness", "rest AS awareness", "abide as the observer" — when this is contraindicated or when the error being addressed is saksi-adhyasa or ananda-adhyasa |
+| `witness-stabilization` | stabilises the witness as a refined object — "you ARE the witness", "rest AS awareness", "abide as the observer" — when this is contraindicated or when the error being addressed is saksi-adhyasa or ananda-adhyasa. **Do not flag this for `purva-adhikari` students**: working at the witness level is pedagogically appropriate for Stage 0 and should not be treated as a violation. |
 | `bliss-as-goal-framing` | frames absorbed bliss, samādhi, or deep-sleep experience as the goal or as the Self — "that bliss is what you are", "rest in that stillness", "that peace is Brahman" |
 | `progressive-path-framing` | implies liberation is something to be reached, earned, or progressed toward — "as you develop...", "when you are ready...", "this will deepen over time..." as a promise of future arrival |
 | `student-objectification` | treats the student as an object to be steered, fixed, or managed rather than a subject in inquiry — "I want to help you achieve...", "you need to work on..." |
