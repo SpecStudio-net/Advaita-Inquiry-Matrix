@@ -70,7 +70,8 @@ def guardrail_check(response: str, directive: dict,
     ----------
     response          : the teacher response to check
     directive         : the state machine directive that produced it
-    call_with_repair_fn : llm_session._call_with_repair (injected to avoid coupling)
+    call_with_repair_fn : llm_session._call_with_repair (injected to avoid coupling);
+                        must accept a `model` keyword
     prompt_fn         : llm_session._prompt
     guardrail_model   : model id for Stage 2 (e.g. claude-haiku-4-5)
 
@@ -100,6 +101,7 @@ def guardrail_check(response: str, directive: dict,
             }],
             validate_guardrail,
             max_tokens=256,
+            model=guardrail_model,
         )
         violations.extend(result.get("violations", []))
     except Exception as exc:

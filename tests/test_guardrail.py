@@ -94,7 +94,7 @@ class TestGuardrailCheck:
         if llm_result is None:
             llm_result = {"ok": True, "violations": []}
 
-        def fake_repair(system, messages, validate_fn, max_tokens):
+        def fake_repair(system, messages, validate_fn, max_tokens, model=None):
             return llm_result
 
         return guardrail_check(
@@ -131,7 +131,7 @@ class TestGuardrailCheck:
             "presenting_error": {"type": "saksi-adhyasa"},
         }
         captured = {}
-        def capture_repair(system, messages, validate_fn, max_tokens):
+        def capture_repair(system, messages, validate_fn, max_tokens, model=None):
             captured["content"] = messages[0]["content"]
             return {"ok": True, "violations": []}
 
@@ -158,3 +158,22 @@ class TestGuardrailCheck:
         assert isinstance(result, dict)
         assert "ok" in result
         assert "violations" in result
+
+
+# ---------- Stage 2 model routing ------------------------------------------
+
+def test_stage2_receives_guardrail_model():
+    """guardrail_check must pass guardrail_model through to the LLM call."""
+    captured = {}
+
+    def capture_repair(system, messages, validate_fn, max_tokens, model=None):
+        captured["model"] = model
+        return {"ok": True, "violations": []}
+
+    guardrail_check(
+        "Some response.", {},
+        call_with_repair_fn=capture_repair,
+        prompt_fn=lambda name: "",
+        guardrail_model="claude-haiku-4-5",
+    )
+    assert captured.get("model") == "claude-haiku-4-5"
