@@ -23,6 +23,7 @@ import json
 import logging
 import os
 import time
+import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -61,8 +62,21 @@ def _prompt(name: str) -> str:
     return _PROMPTS[name]
 
 
+def _normalize_name(value: str) -> str:
+    """Lowercase and strip diacritics so 'Pañca-Kośa-Viveka' matches 'panca-kosa-viveka'."""
+    nfkd = unicodedata.normalize("NFKD", value)
+    return nfkd.encode("ascii", "ignore").decode("ascii").lower()
+
+
 def _prakriya_module_text(prakriya_name: str) -> str:
-    """Extract the section for prakriya_name from AIM_prakriya_modules.md."""
+    """Return the module section for prakriya_name from AIM_prakriya_modules.md.
+
+    Modules are delimited by '### ' headings whose names carry diacritics
+    (e.g. '### B.3 Pañca-Kośa-Viveka (...)'). A section matches when its
+    normalised heading contains the normalised name, or when it carries an
+    '**ID:** <name>' line. Headings are checked first so a cross-reference to
+    the name inside another module's body never wins.
+    """
     global _PRAKRIYA_MODULES
     if _PRAKRIYA_MODULES is None:
         _PRAKRIYA_MODULES = (
@@ -72,22 +86,26 @@ def _prakriya_module_text(prakriya_name: str) -> str:
     if not prakriya_name or not _PRAKRIYA_MODULES:
         return ""
 
-    needle = prakriya_name.lower().replace("-", " ")
+    needle = _normalize_name(prakriya_name)
     lines = _PRAKRIYA_MODULES.splitlines()
-    start = None
-    for i, line in enumerate(lines):
-        if needle in line.lower() or prakriya_name.lower() in line.lower():
-            start = i
-            break
-    if start is None:
-        return ""
+    starts = [i for i, line in enumerate(lines) if line.startswith("### ")]
+    sections = [
+        lines[start:(starts[k + 1] if k + 1 < len(starts) else len(lines))]
+        for k, start in enumerate(starts)
+    ]
 
-    section = []
-    for i, line in enumerate(lines[start:], start):
-        if i > start and line.startswith("### "):  # modules delimited by ### not ##
-            break
-        section.append(line)
-    return "\n".join(section)
+    for section in sections:
+        if needle in _normalize_name(section[0]):
+            return "\n".join(section)
+
+    id_marker = "**id:**"
+    for section in sections:
+        for line in section:
+            stripped = line.strip().lower()
+            if stripped.startswith(id_marker) and stripped[len(id_marker):].strip() == needle:
+                return "\n".join(section)
+
+    return ""
 
 
 # ---------- API wrapper ----------
@@ -115,14 +133,20 @@ def _get_client() -> anthropic.Anthropic:
     return _client
 
 
-def _call_claude(system: str, messages: list, max_tokens: int = 1024) -> str:
-    """Call Claude with exponential-backoff retry on transient errors."""
+def _call_claude(
+    system: str, messages: list, max_tokens: int = 1024, model: str = None
+) -> str:
+    """Call Claude with exponential-backoff retry on transient errors.
+
+    `model` defaults to MODEL; the guardrail passes GUARDRAIL_MODEL.
+    """
     client = _get_client()
+    model = model or MODEL
     last_exc = None
     for attempt in range(MAX_API_RETRIES):
         try:
             resp = client.messages.create(
-                model=MODEL,
+                model=model,
                 max_tokens=max_tokens,
                 system=system,
                 messages=messages,
@@ -184,14 +208,16 @@ def _validate_summary(obj: dict) -> list:
     return errors
 
 
-def _call_with_repair(system: str, messages: list, validate_fn, max_tokens: int) -> dict:
+def _call_with_repair(
+    system: str, messages: list, validate_fn, max_tokens: int, model: str = None
+) -> dict:
     """
     Call Claude expecting JSON. On parse or schema failure, send a repair
     message and retry once. Raises ValueError after two failures.
     """
     msgs = list(messages)
     for attempt in range(2):
-        raw = _call_claude(system, msgs, max_tokens=max_tokens)
+        raw = _call_claude(system, msgs, max_tokens=max_tokens, model=model)
         try:
             obj = _parse_json(raw)
         except json.JSONDecodeError:
